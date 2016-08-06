@@ -137,13 +137,13 @@ export default Ember.Component.extend({
           enter(event) {
             event.preventDefault();
             dragCounter++;
-            element.classList.add('dz-drag-hover');
+            try { element.classList.add('dz-drag-hover'); } catch(e) {};
           },
           leave() {
             dragCounter--;
 
             if (dragCounter === 0) {
-              element.classList.remove('dz-drag-hover');
+              try { element.classList.remove('dz-drag-hover'); } catch(e) {};
             }
           }
         };
